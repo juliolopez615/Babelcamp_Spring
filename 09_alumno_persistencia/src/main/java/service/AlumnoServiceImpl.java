@@ -45,7 +45,7 @@ public class AlumnoServiceImpl implements AlumnoService {
 		Query query=entityManager.createQuery(jpql);
 		return (List<String>)query.getResultList();
 	}
-
+	//Hay que poner wl transaction
 	@Transactional
 	@SuppressWarnings("unchecked")
 	@Override
