@@ -13,11 +13,9 @@ export class AppComponent {
   cursos:string[];
   constructor(private service:AlumnoService){
     this.service.buscarCursos().subscribe(data=>{this.cursos=data; console.log(this.cursos)});
-    
   }
 
   busqueda(){
-    console.log(typeof(this.curso))
     this.service.buscar(this.curso).subscribe(data=>this.alumnos=data);
     console.log(this.alumnos)
   }

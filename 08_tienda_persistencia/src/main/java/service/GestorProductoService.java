@@ -11,4 +11,5 @@ public interface GestorProductoService {
 	public void eliminar(String nombre);
 	public void modificar(String nombre, double nuevoPrecio);
 	public Producto buscarProducto(int idProducto);
+	double precioMedioSeccion(String seccion);
 }

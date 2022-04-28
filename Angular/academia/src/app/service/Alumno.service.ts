@@ -21,4 +21,7 @@ buscar(curso:string){
 buscarCursos(){
   return this.http.get<string[]>(this.url2);
 }
+
+
+
 }

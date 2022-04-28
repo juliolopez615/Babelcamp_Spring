@@ -5,6 +5,7 @@ import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
+import javax.persistence.TypedQuery;
 
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -41,6 +42,7 @@ public class GestorProductoServiceImpl implements GestorProductoService{
 		query.executeUpdate();
 	}
 
+	
 	@Transactional
 	@Override
 	public void modificar(String nombre, double nuevoPrecio) {
@@ -49,11 +51,18 @@ public class GestorProductoServiceImpl implements GestorProductoService{
 		query.setParameter("nuevoPrecio", nuevoPrecio);
 		query.setParameter("nombre", nombre);
 		query.executeUpdate();
-		
 	}
 
 	@Override
 	public Producto buscarProducto(int idProducto) {
 		return entityManager.find(Producto.class, idProducto);
+	}
+
+	@Override
+	public double precioMedioSeccion(String seccion) {
+		String jpql = "select avg(p.precio) from Producto p where p.seccion=:seccion";
+		TypedQuery<Double> query=entityManager.createQuery(jpql, Double.class);
+		query.setParameter("seccion", seccion);
+		return query.getSingleResult();
 	}
 }

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Alumnos</title>
+</head>
+<body>
+  <div class="container">
+    Seleccione curso:
+    <select name = "curso" [(ngModel)] = "curso">
+      <option *ngFor="let a of cursos" value="{{a.nombre}}">{{a.nombre}}</option>
+    </select>
+    <br><br>
+    <input type="button" (click)="busqueda()" value="Buscar">
+    <table border="1" *ngIf="alumnos">
+      <thead><tr><th>Usuario</th><th>Password</th><th>Nombre</th><th>Email</th><th>Edad</th></tr></thead>
+      <tbody >
+        <tr *ngFor="let p of alumnos">
+          <td>{{p.usuario}}</td><td>{{p.password}}</td><td>{{p.nombre}}</td><td>{{p.email}}</td><td>{{p.edad}}</td>
+        </tr>
+      </tbody>
+    </table>
+    <br>
+  </div>
+</body>
+</html>
