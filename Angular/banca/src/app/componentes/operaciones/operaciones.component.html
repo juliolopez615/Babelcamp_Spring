@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operaciones</title>
+</head>
+<body>
+    <div class="cont">
+        <div class="ingresar">
+            <h3>Ingresar dinero</h3>
+            <label for="cant">Introduzca cantidad:</label>
+            <input [(ngModel)]="cantidadIngresar" type="text" id="cant" name="cantidad"><br><br>
+            <input type="button" (click)="ingresar()" value="Ingresar">
+        </div>
+        
+        <div class="extraer">
+            <h3>Extraer dinero</h3>
+            <label for="cant">Introduzca cantidad:</label>
+            <input [(ngModel)]="cantidadExtraer" type="text" id="cant" name="cantidad"><br><br>
+            <input type="button" (click)="extraer()" value="Extraer">
+        </div>
+        
+        <div class="transferir">
+            <h3>Transferir dinero a otra cuenta</h3>
+            <label for="cant">Introduzca cantidad:</label>
+            <input [(ngModel)]="cantidadTransferir" type="text" id="cant" name="cantidad"><br><br>
+        
+            <label for="cuenta">Introduzca cuenta destino:</label>
+            <input [(ngModel)]="numeroCuenta" type="text" id="cuenta" name="cuenta"><br><br>
+        
+            <input type="button" (click)="transferir()" value="Transferir">
+        </div>
+    </div>
+    
+</body>
+</html>

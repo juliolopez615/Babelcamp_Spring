@@ -1,0 +1,25 @@
+.cont1{
+    display: flex;
+    flex-direction: column;
+    background-color: aquamarine;
+    padding: 1%;
+    width: 300px;
+}
+input{
+    margin: 3%;
+}
+.cont{
+    padding-top: 2%;
+    display: flex;
+    justify-content: center;
+}
+
+.cont2{
+    display: flex;
+    padding: 1%;
+    width: 500px;
+}
+table{
+    background-color: aliceblue;
+    width: 500px;
+}

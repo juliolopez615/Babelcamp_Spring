@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movimientos</title>
+</head>
+<body>
+    <div class="cont">
+        <div class="cont1">
+            <label for="start">Fecha inicio: </label> 
+    
+            <input [(ngModel)]="fechaIni" type="date" id="start" name="fechaIni"
+            value="2018-07-22"
+            min="2015-01-01" max="2023-12-31">
+            
+    
+            <label for="start">Fecha Fin: </label> 
+    
+            <input [(ngModel)]="fechaFin" type="date" id="start" name="fechaFin"
+            value="2018-07-22"
+            min="2015-01-01" max="2023-12-31">
+    
+            <input type="button" (click)="movimientos()" value="Ver movimientos">
+        </div>
+        
+        <div class="cont2">
+            <table border="1" *ngIf="movimientoslist">
+                <thead><tr><th>idMovimiento</th><th>idCuenta</th><th>fecha</th><th>cantidad</th><th>operacion</th></tr></thead>
+                <tbody >
+                  <tr *ngFor="let p of movimientoslist">
+                    <td>{{p.idMovimiento}}</td><td>{{p.cuenta.numeroCuenta}}</td><td>{{p.fecha}}</td><td>{{p.cantidad}}</td><td>{{p.operacion}}</td>
+                  </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    
+   
+</body>
+</html>
